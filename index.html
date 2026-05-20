@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>성과급 세후 계산기</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <div class="badge">성과급 세후 계산기</div>
+        <h1>사업부/공통 배분 + 종소세 반영</h1>
+        <p class="lead">영업이익, 성과급 재원비율, 부문:사업부 비율을 조정하면 메모리, LSI/파운드리, 공통사업부의 1인당 세전·세후 수령액을 계산합니다.</p>
+      </div>
+      <button onclick="resetAll()">초기화</button>
+    </div>
+
+    <div class="layout">
+      <section id="controls"></section>
+      <main>
+        <div class="metrics">
+          <div class="metric"><div class="k">총 인원</div><div class="v" id="totalPeople"></div></div>
+          <div class="metric"><div class="k">성과급 총재원</div><div class="v" id="totalFund"></div></div>
+          <div class="metric"><div class="k">부문 공통풀</div><div class="v" id="sharedPool"></div></div>
+          <div class="metric"><div class="k">사업부풀</div><div class="v" id="businessPool"></div></div>
+        </div>
+        <div class="note"><b>계산 방식</b>: 부문 공통풀은 전체 인원 기준 1/n입니다. 사업부풀은 메모리 인원에게만 1/n 배분합니다. 메모리는 공통풀 1인 몫 + 메모리 사업부풀 1인 몫, LSI/파운드리는 공통풀만, 공통사업부는 메모리 사업부풀 1인 몫의 70%로 계산합니다.</div>
+        <div class="cards" id="cards"></div>
+        <div class="foot"><b>세금 가정</b><br>종합소득세는 기본세율 구조를 적용했습니다. 지방소득세는 산출 종합소득세의 10%입니다. 실제 세후액은 기존 연봉, 공제, 비과세, 원천징수, 4대보험 등에 따라 달라질 수 있습니다.</div>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
