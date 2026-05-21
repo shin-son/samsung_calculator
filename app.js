@@ -1,5 +1,5 @@
 const EOK=100000000,JO=10000*EOK;
-const defaults={memoryPeople:27400,lsiPeople:20900,commonPeople:29000,operatingProfitJo:100,fundRatio:10,divisionRatio:40,taxableRatio:100};
+const defaults={memoryPeople:27400,lsiPeople:20900,commonPeople:29000,operatingProfitJo:300,fundRatio:10.5,divisionRatio:40,taxableRatio:100};
 const s={...defaults};
 const brackets=[{l:14000000,r:.06,d:0},{l:50000000,r:.15,d:1260000},{l:88000000,r:.24,d:5760000},{l:150000000,r:.35,d:15440000},{l:300000000,r:.38,d:19940000},{l:500000000,r:.40,d:25940000},{l:1000000000,r:.42,d:35940000},{l:Infinity,r:.45,d:65940000}];
 function clamp(v,min,max){v=Number(v);return Number.isNaN(v)?min:Math.min(max,Math.max(min,v))}
